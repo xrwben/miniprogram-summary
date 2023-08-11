@@ -1,0 +1,65 @@
+<!--pages/home.wxml-->
+<!-- 
+  https://developers.weixin.qq.com/miniprogram/dev/component/page-meta.html
+ -->
+<!-- <page-meta page-style="overflow: {{visible ? 'hidden' : 'visible'}}" /> -->
+<view class="mine custom-tabbar-safe">
+  <view>测试富文本问题：</view>
+  <rich-text nodes="{{descRichText}}"/>
+  <rich-text nodes="{{descRichText2}}"/>
+  <rich-text nodes="{{descRichText3}}"/>
+  <!-- https://jin-yufeng.gitee.io/mp-html/#/overview/quickstart -->
+  <rich-text nodes="{{descRichText4}}"/>
+
+  <view style="margin-top: 30px;">测试::before伪元素</view>
+  <view class="title">标题前面的●能否用伪元素实现</view>
+
+  <view style="margin-top: 30px;">测试滚动穿透：</view>
+  <button bindtap="showPopup">显示弹窗</button>
+  <view class="popup" wx:if="{{isShowPopup}}">
+    <scroll-view class="popup-con" scroll-y="{{true}}">
+      <view class="main">
+        <image class="pic" src="/image/pic1.jpg" alt=""/>
+        <image class="pic" src="/image/pic2.jpg" alt=""/>
+      </view>
+      <button class="close" bindtap="closePopup">关闭弹窗</button>
+    </scroll-view>
+  </view>
+  <view style="margin-top: 30px;">测试音频时间和倍速bug：</view>
+  <view class="operation-progress">
+    <image class="icon" src="/image/time-prev.png" data-seek="prev" bindtap="changeSeek"></image>
+    <view class="progerss-bar">
+      <slider class="progress"
+        backgroundColor="#ececec"
+        activeColor="rgba(0, 0, 0, 0.4)"
+        block-size="12"
+        block-color="#666"
+        step="1"
+        value="{{ audio.progress }}"
+        bindchange="changeAudioProgress">
+      </slider>
+      <view class="time">
+        <text class="current-time">{{ currentTime }}</text>
+        <text class="all-time">{{ durationTime }}</text>
+      </view>
+    </view>
+    <image class="icon" src="/image/time-next.png" data-seek="next" bindtap="changeSeek"></image>
+  </view>
+  <view class="operation-other">
+    <view class="play-rate" bindtap="changeRate">
+      <image class="icon" src="/image/speed.png"></image>
+      <view class="txt">倍速{{ playbackRate }}</view>
+    </view>
+    <view class="play-pause">
+      <image wx:if="{{!audio.isPlaying}}" class="icon" src="/image/play.png" bindtap="play"></image>
+      <image wx:else class="icon" src="/image/pause.png" bindtap="pause"></image>
+    </view>
+    <view class="view-lyr" bindtap="lookWord">
+      <image class="icon" src="/image/play-mode.png"></image>
+      <view class="txt">播放模式</view>
+    </view>
+  </view>
+
+
+  <view class="footer">———— 底部 ————</view>
+</view>

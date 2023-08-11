@@ -1,0 +1,114 @@
+/* pages/home.wxss */
+.mine {
+  padding: 16rpx;
+}
+.title {
+  padding: 32rpx;
+  display: flex;
+  align-items: center;
+}
+.title::before {
+  content: '';
+  width: 12rpx;
+  height: 12rpx;
+  background: #007aff;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.popup {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup .popup-con {
+  width: 80%;
+  height: 60%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.popup .popup-con .main {
+  padding: 10rpx;
+  overflow: auto;
+}
+.popup .popup-con .main .pic {
+  width: 100%;
+}
+.popup .popup-con .close {
+  margin: 10rpx auto;
+}
+
+.operation-progress {
+  padding: 0 32rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 48rpx;
+}
+.operation-progress .icon {
+  width: 56rpx;
+  height: 56rpx;
+}
+.operation-progress .progerss-bar {
+  flex: 1;
+  margin: 0 24rpx;
+  position: relative;
+}
+.operation-progress .progerss-bar wx-slider {
+  margin: 0;
+}
+.operation-progress .progerss-bar .time {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+}
+.operation-other {
+  height: 128rpx;
+  padding: 40rpx 42rpx 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.operation-other .play-rate,
+.operation-other .view-lyr {
+  text-align: center;
+  align-self: flex-end;
+}
+.operation-other .play-rate .icon,
+.operation-other .view-lyr .icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+.operation-other .play-rate .txt,
+.operation-other .view-lyr .txt {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 20rpx;
+  margin-top: 4rpx;
+}
+.operation-other .play-pause {
+  width: 96rpx;
+  height: 96rpx;
+}
+.operation-other .play-pause .icon {
+  width: 100%;
+  height: 100%;
+}
+.network-audio .audio-container-padding {
+  padding: 40rpx 32rpx 0;
+}
+
+.footer {
+  color: #007aff;
+  margin: 1000px 0 200px;
+  text-align: center;
+}

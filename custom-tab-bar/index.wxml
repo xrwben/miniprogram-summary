@@ -1,0 +1,15 @@
+<!--components/custom-tabbar.wxml-->
+<!-- 
+  这个自定义tabbar组件必须放在根目录的custom-tab-bar 文件夹下，这样才能被识别
+
+  兼容性 基础库版本2.5.0，app.json配置同样的list
+
+  选中的样式对不上问题：tab页显示时通过getTabBar()获取自定义组件然后设置更改currentTab值
+
+ -->
+<view class="custom-tabbar">
+  <view class="tab-item" wx:for="{{tabList}}" wx:key="index" data-name="{{item.name}}" data-path="{{item.pagePath}}" bindtap="changeTab">
+    <image class="icon" src="{{ currentTab === item.name ? item.selectedIconPath : item.iconPath}}" mode="scaleToFill"/>
+    <text class="txt {{currentTab === item.name ? 'active' : ''}}">{{ item.text }}</text>
+  </view>
+</view>

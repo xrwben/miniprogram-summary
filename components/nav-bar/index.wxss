@@ -1,0 +1,71 @@
+
+.header-search {
+  width: 100%;
+  background: #007aff;
+  padding-bottom: 16rpx;
+}
+.header-search .pull-loading {
+  width: 100%;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+  position: absolute;
+  top: 10rpx;
+}
+.header-search .logo {
+  width: 100%;
+  height: 64rpx;
+  margin-bottom: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.header-search .logo .pic {
+  width: 72rpx;
+  height: 48rpx;
+  margin: 0 32rpx;
+}
+.header-search .logo .title {
+  width: 428rpx;
+  color: #fff;
+  font-size: 32rpx;
+  font-family: 'TencentSans';
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.header-search .search-con {
+  padding: 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-search .search-con .back {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 16rpx;
+}
+.header-search .search-con .search {
+  flex: 1;
+  height: 64rpx;
+  background: #fff;
+  border-radius: 160rpx;
+  padding: 0 28rpx;
+  display: flex;
+  align-items: center;
+}
+.header-search .search-con .search .icon {
+  width: 36rpx;
+  height: 36rpx;
+}
+.header-search .search-con .search .input {
+  flex: 1;
+  height: 48rpx;
+  padding: 0 16rpx;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 28rpx;
+}
+.header-search .search-con .search .placeholder {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 28rpx;
+}

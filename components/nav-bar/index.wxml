@@ -1,0 +1,33 @@
+<!--components/nav-bar/index.wxml-->
+<!-- 
+    Android、IOS手机对于页面title的展示不一致，安卓title的显示不居中
+    页面的title只支持纯文本级别的样式控制，不能够做更丰富的title效果
+    左上角的事件无法监听、定制
+    路由导航单一，只能够返回上一页，深层级页面的返回不够友好
+
+    https://www.zhangxinxu.com/wordpress/2022/04/css-sticky-size-change/
+
+ -->
+<view class="header-search" style="padding-top:{{navPaddingTop}}px; position: sticky; top: {{-searchStickyTop}}px;">
+  <view class="pull-loading" wx:if="{{isPullDowning}}">聚沙成塔</view>
+  <view class="logo" style="position: sticky; top: {{navPaddingTop}}px; opacity: {{(searchStickyTop - scrollTop) / searchStickyTop}};">
+  <!-- <view class="logo" style="transform: translate3d(0, {{scrollTop}}px, 0); opacity: {{(searchStickyTop - scrollTop) / searchStickyTop}};"> -->
+    <image class='pic' src='/image/logo.png'></image>
+    <text class="title">{{ title }}</text>
+  </view>
+  <view class="search-con" style="padding-right: {{searchPaddingRight}}rpx;">
+    <view class="search" bindtap="goSearchPage">
+      <image class="icon" src="/image/search.png"></image>
+      <input class="input"
+        type="text"
+        value="{{searchkey}}"
+        disabled="true"
+        placeholder="输入关键词搜索{{scrollTop}}{{searchStickyTop}}"
+        placeholder-class="placeholder"
+        confirm-type="search"
+        bindinput="input"
+        bindconfirm="searchEvent"
+      />
+    </view>
+  </view>
+</view>

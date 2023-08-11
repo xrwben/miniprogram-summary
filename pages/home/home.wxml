@@ -1,0 +1,19 @@
+<!--pages/home.wxml-->
+<view class="home custom-tabbar-safe">
+  <!-- <nav-bar isPullDowning="{{isPullDowning}}" marginTop="{{marginTop}}"></nav-bar> -->
+  <view class="nav-bar" style="position: sticky; top: {{-stickyTop}}px;">
+    <nav-bar isPullDowning="{{isPullDowning}}" marginTop="{{marginTop}}" bindgetStickyTop="getStickyTop"></nav-bar>
+  </view>
+  <view class="con">
+    <image class="pic" src="/image/pic1.jpg" alt=""/>
+  </view>
+  <view class="con">
+    <image class="pic" src="/image/pic2.jpg" alt=""/>
+  </view>
+  <view class="con">
+    <image class="pic" src="/image/pic3.jpg" alt=""/>
+  </view>
+  <view class="con">
+    <image class="pic" src="/image/pic4.jpg" alt=""/>
+  </view>
+</view>
